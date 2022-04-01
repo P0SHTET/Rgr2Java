@@ -1,13 +1,8 @@
 package com.festu.pomodoro.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
@@ -18,23 +13,36 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pomodoro extends BaseEntity {
 
     String title;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pomodoro", cascade = CascadeType.REMOVE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn
     Tag tag;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "pomodoro", cascade = CascadeType.REMOVE)
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "hours", column = @Column(name = "work_hours")),
+            @AttributeOverride(name = "minutes", column = @Column(name = "work_minutes"))
+    })
     Duration workDuration;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "pomodoro", cascade = CascadeType.REMOVE)
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "hours", column = @Column(name = "rest_hours")),
+            @AttributeOverride(name = "minutes", column = @Column(name = "rest_minutes"))
+    })
     Duration restDuration;
 
     LocalDateTime startTime;
 
-    public void start() {
+    public LocalDateTime start() {
         startTime = LocalDateTime.now();
+        return startTime;
     }
 
     public void reset() {

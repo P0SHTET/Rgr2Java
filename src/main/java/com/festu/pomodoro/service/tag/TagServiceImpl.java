@@ -19,7 +19,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class TagServiceImpl implements TagService {
 
-    TagRepository repository;
+    private final TagRepository repository;
 
     @Override
     public Tag create(CreateTagDto dto) {

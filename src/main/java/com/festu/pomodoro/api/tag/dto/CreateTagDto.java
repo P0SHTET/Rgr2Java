@@ -1,7 +1,8 @@
 package com.festu.pomodoro.api.tag.dto;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 
@@ -11,7 +12,8 @@ import javax.validation.constraints.NotBlank;
  * @author Fedor Ishchenko
  */
 @Getter
-@Builder
+@Setter
+@NoArgsConstructor
 public class CreateTagDto {
 
     @NotBlank(message = "Tag title can't be empty")

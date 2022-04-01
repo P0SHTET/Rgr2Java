@@ -1,11 +1,8 @@
 package com.festu.pomodoro.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * Created on 4/1/2022
@@ -15,11 +12,10 @@ import javax.persistence.OneToOne;
 @Getter
 @Setter
 @Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Tag extends BaseEntity {
-
-    @OneToOne
-    @JoinColumn(nullable = false)
-    Pomodoro pomodoro;
 
     String title;
 

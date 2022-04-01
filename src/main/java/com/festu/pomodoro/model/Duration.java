@@ -1,11 +1,6 @@
 package com.festu.pomodoro.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import lombok.*;
 
 /**
  * Created on 4/1/2022
@@ -15,11 +10,9 @@ import javax.persistence.OneToOne;
 @Getter
 @Setter
 @Builder
-public class Duration extends BaseEntity {
-
-    @OneToOne
-    @JoinColumn(nullable = false)
-    Pomodoro pomodoro;
+@NoArgsConstructor
+@AllArgsConstructor
+public class Duration {
 
     Integer hours;
 
