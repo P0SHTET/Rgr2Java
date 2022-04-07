@@ -5,11 +5,7 @@ import com.festu.pomodoro.api.pomodoro.dto.PomodoroListDto;
 import com.festu.pomodoro.model.Pomodoro;
 import org.mapstruct.Mapper;
 
-/**
- * Created on 4/1/2022
- *
- * @author Fedor Ishchenko
- */
+
 @Mapper
 public interface PomodoroMapper {
 

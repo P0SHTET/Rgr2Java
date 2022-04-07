@@ -1,26 +1,30 @@
 @startuml
 
-class UserEntry {
-    UUID id
-    String name
-}
-
-entity Meeting {
+class Pomodoro {
     UUID id
     String title
-    UserEntry author
-    List<LocalDateTime> availableTime
-    List<Vote> votes
+    Tag tag
+    Duration workDuration
+    Duration restDuration
+    User user
 }
 
-entity Vote {
+entity Duration {
+    int hours
+    int minutes
+}
+
+class Tag {
+    string title
+}
+
+entity User {
     UUID id
-    LocalDateTime time
-    UserEntry user
+    string username
 }
 
-Meeting --> UserEntry
-Vote --> UserEntry
-Meeting --> Vote
+Pomodoro --> Duration
+Pomodoro --> User
+Pomodoro --> Tag
 
 @enduml

@@ -9,11 +9,7 @@ import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-/**
- * Created on 4/1/2022
- *
- * @author Fedor Ishchenko
- */
+
 @Getter
 @Setter
 @NoArgsConstructor

@@ -13,11 +13,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-/**
- * Created on 4/1/2022
- *
- * @author Fedor Ishchenko
- */
+
 @RestController
 @RequestMapping("tag")
 @RequiredArgsConstructor

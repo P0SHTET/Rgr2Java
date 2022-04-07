@@ -5,11 +5,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * Created on 4/1/2022
- *
- * @author Fedor Ishchenko
- */
 @Getter
 @Setter
 @Builder
@@ -48,5 +43,4 @@ public class Pomodoro extends BaseEntity {
     public void reset() {
         startTime = null;
     }
-
 }

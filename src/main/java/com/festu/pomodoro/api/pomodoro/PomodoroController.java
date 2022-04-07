@@ -21,11 +21,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-/**
- * Created on 4/1/2022
- *
- * @author Fedor Ishchenko
- */
 @RestController
 @RequestMapping("pomodoro")
 @RequiredArgsConstructor
@@ -72,5 +67,4 @@ public class PomodoroController {
     public PomodoroDto update(@PathVariable UUID id, @RequestBody @Valid UpdatePomodoroDto dto) {
         return mapper.toDto(service.update(id, dto));
     }
-
 }

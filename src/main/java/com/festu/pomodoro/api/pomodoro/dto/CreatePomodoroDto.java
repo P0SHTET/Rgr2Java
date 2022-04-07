@@ -10,11 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-/**
- * Created on 4/1/2022
- *
- * @author Fedor Ishchenko
- */
+
 @Getter
 @Setter
 @NoArgsConstructor

@@ -31,7 +31,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class MetingServiceImpl implements MeetingService {
 
-    private final static QMeeting meeting = QMeeting.meeting;
+
 
     MeetingRepository repository;
 
@@ -72,8 +72,8 @@ public class MetingServiceImpl implements MeetingService {
     @Override
     @Transactional(readOnly = true)
     public List<Meeting> list(@NonNull SearchMeetingArguments arguments) {
-        Predicate predicate = buildPredicate(arguments);
-        return Lists.newList(repository.findAll(predicate));
+
+        return Lists.newList(repository.findAll());
     }
 
     @Override
@@ -83,10 +83,6 @@ public class MetingServiceImpl implements MeetingService {
         repository.delete(meeting);
     }
 
-    private Predicate buildPredicate(SearchMeetingArguments arguments) {
-        return WhereClauseBuilder.getNew()
-                                 .optionalAnd(arguments.getTitle(), meeting.title::containsIgnoreCase)
-                                 .build();
-    }
+
 
 }
